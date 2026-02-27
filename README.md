@@ -1,4 +1,4 @@
-# Optimal Control via Dynamic_Programing
+# Optimal Control via Dynamic Programing
 
 Goal: Solve 
 
