@@ -28,15 +28,14 @@ Both state and control values are discrete and bounded. And  <br />
 
 
 <br />
-The recurrence equation:  <br />
+The recurrence equation:  <br /> <br />
 
 $$
 J_{N-K,N}^{ * }(x[N-K]) = \min_{u[N-K]} \Bigl[ g(x[N-K], u[N-K]) + J_{N-(K-1), N}^{ * }(a(x[N-K], u[N-K]) ) \Big] \\ \\
 $$
-for $K = 1, 2, 3, ..., N$ with inital stage ($K=0$):
-$$
-J_{N,N}^{ * }(x[N]) = h(x[N])
-$$
+
+for $K = 1, 2, 3, ..., N$ with inital stage ($K=0$) given by $J_{N,N}^{ * }(x[N]) = h(x[N])$.
+
 
 ## Linear Regulator example 
 
