@@ -15,7 +15,7 @@ $$\begin{align}
 \end{align}$$
 
 where:
-- $J_{0, N}$ is the cost 
+- $J_{0, N}$ is the cost functional
 - $x$ is the $n$-d state variable
 - $u$ is the $m$-d control variable
 - $h(.)$ is the terminal cost function
