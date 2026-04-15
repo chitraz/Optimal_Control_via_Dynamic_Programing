@@ -1,6 +1,6 @@
 # Optimal Control via Dynamic Programming
 
-A C++ implementation that solves the recursive Bellman equation for discrete optimal control problems of the form:
+A C++ implementation that solves the Bellman equation for discrete optimal control problems of the form:
 <br />
 
 $$\begin{align}
