@@ -32,13 +32,19 @@ recursive Bellman equation => Working backwards in time, find:
 			...
 
 outputs:
-	- sequence of optimal controls (u*) to achieve minimum cost (J*) with optimal state trajectory (x*) 
+	- sequence of optimal controls (u*) to achieve minimum cost (J*) with optimal state trajectory (x*)
+    
+To Do:
+    - verify on more problems.
+    - Try different cost interpolation methods (mean from nearest(L2?) neighouring state nodes (how many?))
+    - handle more complex constraints, currently using only simple box contraints. 
+    - accelerate using multithreading.
 */
 #include <iostream>
 #include "BellmanSolver.hpp"
 #include "BellmanSolver.cpp"
-#include "ProblemDefination.hpp"
-#include "ProblemDefination.cpp"
+#include "ProblemDefinition.hpp"
+#include "ProblemDefinition.cpp"
 
 int main(){
     // Solve linear regulator problem defined in "ProblemDefination"

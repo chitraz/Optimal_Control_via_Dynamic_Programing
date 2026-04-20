@@ -5,9 +5,12 @@ x_values = []
 u_times = []
 u_values = []
 
-# parse and load values from text files
+# parse and load values from text files (output from C++ solver)
 opt_u_file = open("opt_u.txt")
 opt_x_file = open("opt_x.txt")
+opt_J_file = open("opt_J.txt")
+
+opt_cost = opt_J_file.readline()
 x_samples = opt_x_file.readlines()
 u_samples = opt_u_file.readlines()
 
@@ -47,5 +50,7 @@ ulegends = []
 for i in range(m):
     ulegends.append('u_' + str(i))
 plt.legend(ulegends)
+
+plt.suptitle("optimal cost = " + opt_cost)
 
 plt.show()

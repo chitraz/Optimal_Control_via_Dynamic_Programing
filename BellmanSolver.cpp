@@ -168,9 +168,7 @@ void BellmanSolver::RunDynamicProgramingAlgo()
                     final_state_idx = NearestStateValueIndex(ProblemData.final_x);
                     StateSpaceGrid[N - k][final_state_idx].opt_cost = ProblemData.cost_equation(X_admissable[final_state_idx], {}, true);
                     StateSpaceGrid[N - k][final_state_idx].reachable = true;
-                }
-                
-
+                }               
             }
             else
             {
@@ -202,9 +200,10 @@ void BellmanSolver::RunDynamicProgramingAlgo()
 
                 }
             }
-        }                 
+        }
+        // print progress
+        std::cout << "\rProgress: " << (k / N)*100  << " %" << std::flush;                 
     }
-    std::cout << "done. " <<std::endl;
 }// interpolation cost? mean cost from closest (L2 distance?) nodes.
 
 void BellmanSolver::PrintResults()
@@ -226,12 +225,12 @@ void BellmanSolver::PrintResults()
             total_nodes ++;
         }
     }
-    std::cout<< "State Space Grid is " << ((double)reachable_nodes/(double)total_nodes)*100 << "\% filled." << std::endl;
+    std::cout<< "\nState Space Grid is " << ((double)reachable_nodes/(double)total_nodes)*100 << " \% filled." << std::endl;
 
     // check there is a valid path from given intital state value
     if (!StateSpaceGrid[0][inital_state_idx].reachable)
     {
-        std::cout << "ERROR: can't reach any terimnal states from the given initial state." << std::endl;
+        std::cout << "ERROR: can't reach terimnal state from the given initial state." << std::endl;
         std::cout << "(nearest) x[0] = ";
         for (int i = 0; i < ProblemData.n; i++)
         {
@@ -266,6 +265,7 @@ void BellmanSolver::PrintResults()
         // export optimal control policy and optimal state trajectory to txt files
         std::ofstream x_out_file("results/opt_x.txt");
         std::ofstream u_out_file("results/opt_u.txt");
+        std::ofstream J_out_file("results/opt_J.txt");
 
         for (int k = 0; k < ProblemData.N + 1; k++)
         {
@@ -289,6 +289,9 @@ void BellmanSolver::PrintResults()
             }
 
         }
+        J_out_file << optimal_cost << "\n"; // also save optimal cost
+
+        J_out_file.close();
         x_out_file.close();
         u_out_file.close();
     }

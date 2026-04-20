@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ProblemDefination.hpp"
+#include "ProblemDefinition.hpp"
 
 // a node in our state-space-time grid
 struct node {   
@@ -26,7 +26,7 @@ class BellmanSolver
         void PrintResults();
         
     private:
-        ProblemDefination ProblemData;
+        ProblemDefinition ProblemData;
 
         int num_of_x_points;  // number of discrete points in X_admissable
         int num_of_u_points;  // number of discrete points in U_admissable
