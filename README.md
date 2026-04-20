@@ -83,4 +83,9 @@ double ProblemDefinition::cost_equation(std::vector<double> current_x, std::vect
 
 <img width="1271" height="670" alt="result" src="https://github.com/user-attachments/assets/c61897d9-d05f-4b0a-8c61-25df60048d31" />
 
+## To do
+- Verify on more problems.
+- Handle more complex constrains.
+- accelerate using multithreading.
+
 
