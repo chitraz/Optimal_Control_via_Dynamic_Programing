@@ -14,7 +14,7 @@ $$\begin{align}
 \end{align}$$
 
 where:
-- $J_{0, N}$ is the cost functional from stage $O$ to $N$
+- $J_{0, N}$ is the cost functional from stage $0$ to $N$
 - $x$ is the $n$-d state variable
 - $u$ is the $m$-d control variable
 - $h(.)$ is the terminal cost function
